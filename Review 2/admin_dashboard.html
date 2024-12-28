@@ -1,0 +1,100 @@
+ADMIN DASHBOARD
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Admin Dashboard</h1>
+        
+        <!-- User Management Section -->
+        <section class="mt-4">
+            <h2>User Management</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamic rows populated by Flask or JS -->
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- Course Management Section -->
+        <section class="mt-4">
+            <h2>Course Management</h2>
+            <button class="btn btn-primary mb-3">Create New Course</button>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Course ID</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamic rows populated by Flask or JS -->
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- Performance Analytics Section -->
+        <section class="mt-4">
+            <h2>Performance Analytics</h2>
+            <canvas id="performanceChart" width="400" height="200"></canvas>
+        </section>
+        
+        <!-- System Settings Section -->
+        <section class="mt-4">
+            <h2>System Settings</h2>
+            <button class="btn btn-warning">Update Settings</button>
+        </section>
+        
+        <!-- System Activity Monitoring Section -->
+        <section class="mt-4">
+            <h2>System Activity Monitoring</h2>
+            <div id="activityLog" style="height: 200px; overflow-y: auto; border: 1px solid #ddd; padding: 10px;">
+                <!-- Real-time updates populated by Flask or JS -->
+            </div>
+        </section>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Example chart for performance analytics
+        const ctx = document.getElementById('performanceChart').getContext('2d');
+        const performanceChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Course 1', 'Course 2', 'Course 3'],
+                datasets: [{
+                    label: 'Performance Metrics',
+                    data: [75, 90, 60],
+                    backgroundColor: ['rgba(75, 192, 192, 0.2)'],
+                    borderColor: ['rgba(75, 192, 192, 1)'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
